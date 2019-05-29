@@ -1,16 +1,19 @@
 <div>
-   <form action="cercle.json">
-      <input type="text" name="x" placeholder="Valeur de x">
-      <input type="text" name="y" placeholder="Valeur de y">
-      <input type="text" name="rayon" placeholder="Valeur du rayon">
-      <button (click)="onAddCercle()">Add Cercle</button>
-   </form>
-   <br/>
-   <form action="rectangle.json">
-      <input type="text" name="x" placeholder="Valeur de x">
-      <input type="text" name="y" placeholder="Valeur de y">
-      <input type="text" name="hauteur" placeholder="Valeur de la hauteur">
-      <input type="text" name="largeur" placeholder="Valeur de la largeur">
-      <button (click)="onAddRectangle()">Add Rectangle</button>
-   </form>
+   <button (click)="onAddCercle()" class="btn btn-primary btn-sm">Add Cercle</button>
+
+   <button (click)="onAddRectangle()" class="btn btn-primary btn-sm">Add Rectangle</button>
+   <br /><br />
+   <button (click)="onSaveDessin()" class="btn btn-success">Save dessin</button>
+   <button (click)="onLoadDessin()" class="btn btn-info">Load dessin</button>
+   <br /><br />
+   <button (click)="onClearDessin()" class="btn btn-warning">Effacer dessin</button>
 </div>
+<br />
+<input [(ngModel)]="srvPlan.instancePlan.name"><br />
+<!--   select liste des dessins   -->
+<select (change)="onLstChange()" [(ngModel)]="valSelect" >
+   <option *ngFor="let item of srvPlan.listeDesDessins" value=" {(item)} "> {{item}} </option>
+</select>
+
+<!--   Zone de saisie de la géométrie   -->
+<app-geometry #geometry></app-geometry>

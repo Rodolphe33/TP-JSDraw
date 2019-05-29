@@ -3,8 +3,13 @@ import { Point } from './point';
 
 export class Cercle extends FG {
 
-   constructor(point: Point, private innerRayon: number,) {
-      super(point); ///   Appel du constructor classe mére
+   public static from(objLoad: any): FG {
+      const ptr: Point = new Point(objLoad.innerAncrage.innerX, objLoad.innerAncrage.innerY);
+      return new Cercle(ptr, objLoad.innerRayon);
+   }
+
+   constructor(point: Point, private innerRayon: number, ) {
+      super(point, 'Cercle'); ///   Appel du constructor classe mére
    }
    public get rayon(): number {
       return this.innerRayon;

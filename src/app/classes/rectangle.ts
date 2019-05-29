@@ -3,8 +3,13 @@ import { Point } from './point';
 
 export class Rectangle extends FG {
 
+   public static from(objLoad: any): FG {
+      const ptr: Point = new Point(objLoad.innerAncrage.innerX, objLoad.innerAncrage.innerY);
+      return new Rectangle(ptr, objLoad.innerHauteur, objLoad.innerLargeur);
+   }
+
    constructor(point: Point, private innerHauteur: number, private innerLargeur: number) {
-      super(point);
+      super(point, 'Rectangle');
    }
 
    public get hauteur(): number {

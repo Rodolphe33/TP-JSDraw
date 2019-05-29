@@ -1,17 +1,17 @@
-<div style="text-align:center">
+<div>
    <tabset>
-      <tab heading="Basic title" id="tab1">Welcome to {{ title }}!</tab>
-      <tab heading="Basic title" id="tab1"><i class="fab fa-angular" style="font-size: 3rem"></i></tab>
-      <tab heading="Basic Title 1"><i class="fab fa-node-js 5x" style="font-size: 3rem"></i></tab>
-      <tab heading="Basic Title 2"><i class="fas fa-shipping-fast 5x" style="font-size: 3rem"></i></tab>
-      <tab heading="Basic Title 3"><i class="fab fa-envira 5x" style="font-size: 3rem"></i></tab>
+      <tab heading="JSDraw" id="tab1"></tab>
+      <tab heading="Angular" id="tab1"><i class='fab fa-angular' style='font-size: 3rem'></i></tab>
+      <tab heading='NodeJS'><i class="fab fa-node-js 5x" style="font-size: 3rem"></i></tab>
+      <tab heading='Express'><i class="fas fa-shipping-fast 5x" style="font-size: 3rem"></i></tab>
+      <tab heading='MongoDB'><i class="fab fa-envira 5x" style="font-size: 3rem"></i></tab>
    </tabset>
 </div>
 
-<div>
+<div style="text-align: center">
    <app-menu></app-menu>
-
-   <app-draw></app-draw>
+<br/>
+   <app-draw hauteurCanvas="600" largeurCanvas="600"></app-draw>
 
    <router-outlet></router-outlet>
 </div>
